@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Net.Http;
 
 namespace MenuPractise
 {
@@ -17,7 +19,9 @@ namespace MenuPractise
             Console.Clear();
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1. Reverse String");
-            Console.WriteLine("2. Remove Whitespace");
+            Console.WriteLine("2. Replace Whitespace with _");
+            Console.WriteLine("3. Create Person");
+            Console.WriteLine("4. ");
             Console.WriteLine("3. Exit");
             Console.Write("\r\nSelect an option: ");
 
@@ -27,7 +31,7 @@ namespace MenuPractise
                     ReverseString();
                     return true;
                 case "2":
-                    RemoveWhitespace();
+                    ReplaceWhitespace();
                     return true;
                 case "3":
                     return false;
@@ -52,12 +56,14 @@ namespace MenuPractise
             DisplayResult(String.Concat(charArray));
         }
 
-        private static void RemoveWhitespace()
+        private static void ReplaceWhitespace()
         {
             Console.Clear();
-            Console.WriteLine("Remove Whitespace");
-            DisplayResult(CaptureInput().Replace(" ", ""));
+            Console.WriteLine("Replace Whitespace");
+            DisplayResult(CaptureInput().Replace(" ", "_"));
         }
+        
+
 
         private static void DisplayResult(string message)
         {
